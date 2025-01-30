@@ -7,42 +7,40 @@ const prisma = new PrismaClient()
 
 async function main() {
 
-    // const user = await prisma.user.create({
-    //     data: {
-    //         name: "Yunus emre seferoglu",
-    //         email: "seferogluemre@mail.com",
+    const user = await prisma.user.create({
+        data: {
+            name: "Yunus emre seferoglu",
+            email: "seferogluemre@mail.com",
 
-    //         posts: {
-    //             create: [
-    //                 {
-    //                     title: "Emre Seferoglu kimdir",
-    //                     content: "Emre seferoglu İstanbulda dogdu"
-    //                 },
-    //                 {
-    //                     title: "OnlyJS Akademi",
-    //                 },
-    //                 {
-    //                     title: "Javascript Hangi alanlarda kullanılır",
-    //                     content: "Web geliştirme,Mobil Uygulama geliştirme,Sunucu geliştirme,Ön Uç geliştirme"
-    //                 },
-    //             ]
-    //         },
-    //     },
-    //     select: {
-    //         name: true,
-    //         posts: {
-    //             select: {
-    //                 title: true,
-    //             },
+            posts: {
+                create: [
+                    {
+                        title: "Emre Seferoglu kimdir",
+                        content: "Emre seferoglu İstanbulda dogdu"
+                    },
+                    {
+                        title: "OnlyJS Akademi",
+                    },
+                    {
+                        title: "Javascript Hangi alanlarda kullanılır",
+                        content: "Web geliştirme,Mobil Uygulama geliştirme,Sunucu geliştirme,Ön Uç geliştirme"
+                    },
+                ]
+            },
+        },
+        select: {
+            name: true,
+            posts: {
+                select: {
+                    title: true,
+                },
+            }
 
-    //         }
+        }
+    })
+    // const users = await prisma.user.findMany();
 
-    //     }
-    // })
-    const users = await prisma.user.findMany();
-
-
-    console.log(users)
+    console.log(user)
 }
 
 main()
