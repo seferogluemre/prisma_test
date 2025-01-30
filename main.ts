@@ -39,9 +39,10 @@ async function main() {
 
     //     }
     // })
+    const users = await prisma.user.findMany();
 
 
-    console.log(user)
+    console.log(users)
 }
 
 main()
